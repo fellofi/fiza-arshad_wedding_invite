@@ -234,21 +234,21 @@ footer .fam{font-size:var(--t-label);line-height:1.7;color:var(--label);margin:v
 .art.go .hl{opacity:1;transform:none}
 .art.go .hr{opacity:1;transform:scaleX(-1)}
 .art .disc{transform-box:fill-box;transform-origin:center;transform:scale(0)}
-.art.go .disc{animation:ablot .8s cubic-bezier(.3,1.2,.4,1) calc(var(--d) * .3) forwards}
+.art.go .disc{animation:ablot .8s cubic-bezier(.3,1.2,.4,1) calc(var(--d) * .55) forwards}
 .art .dot{transform-box:fill-box;transform-origin:center;transform:scale(0)}
-.art.go .dot{animation:apop .32s cubic-bezier(.3,1.8,.5,1) calc(var(--d) * .3) forwards}
+.art.go .dot{animation:apop .32s cubic-bezier(.3,1.8,.5,1) calc(var(--d) * .55) forwards}
 .art .ly{transform:scale(0)}
-.art.go .ly{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards}
+.art.go .ly{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards}
 .art .rise{opacity:0;transform:scale(.9)}
 .art.go .rise{animation:arise .55s cubic-bezier(.2,.7,.2,1) forwards}
-.art.go .tw{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,atw 1.6s ease-in-out calc(var(--d) * .3 + 1.8s) infinite}
+.art.go .tw{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,atw 1.6s ease-in-out calc(var(--d) * .55 + 1.8s) infinite}
 .art .grow{clip-path:inset(84% 0 0 0);opacity:0}
 .art.go .grow{animation:agrow .6s ease forwards}
 /* gentle motion that keeps going after a graphic has built */
-.art.go .sway{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,asway 3.2s ease-in-out calc(var(--d) * .3 + .5s) infinite alternate}
-.art.go .bob{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,abob 2.4s ease-in-out calc(var(--d) * .3 + .5s) infinite alternate}
-.art.go .wave{animation:apop .32s cubic-bezier(.3,1.8,.5,1) calc(var(--d) * .3) forwards,awave 2.2s ease-in-out calc(var(--d) * .3 + .8s) infinite}
-.art.go .glow{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,aglow 2.8s ease-in-out calc(var(--d) * .3 + .6s) infinite alternate}
+.art.go .sway{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,asway 3.2s ease-in-out calc(var(--d) * .55 + .5s) infinite alternate}
+.art.go .bob{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,abob 2.4s ease-in-out calc(var(--d) * .55 + .5s) infinite alternate}
+.art.go .wave{animation:apop .32s cubic-bezier(.3,1.8,.5,1) calc(var(--d) * .55) forwards,awave 2.2s ease-in-out calc(var(--d) * .55 + .8s) infinite}
+.art.go .glow{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,aglow 2.8s ease-in-out calc(var(--d) * .55 + .6s) infinite alternate}
 @keyframes asway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
 @keyframes abob{from{transform:rotate(-10deg) scale(1)}to{transform:rotate(10deg) scale(1.1)}}
 @keyframes awave{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
@@ -294,20 +294,20 @@ footer .fam{font-size:var(--t-label);line-height:1.7;color:var(--label);margin:v
 
 /* dholki being played, and a hand taking haldi */
 .art.go .rise.thump{animation:arise .55s cubic-bezier(.2,.7,.2,1) forwards,athump .62s ease-in-out 1s infinite}
-.art.go .ly.thump{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,athump .62s ease-in-out 1s infinite}
+.art.go .ly.thump{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,athump .62s ease-in-out 1s infinite}
 .art.go svg.thump{animation:athump .62s ease-in-out 1s infinite}
-.art.go .ly.thump2{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,athump .62s ease-in-out 1.31s infinite}
-.art.go .ly.skin{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,askin .62s ease-in-out 1s infinite}
+.art.go .ly.thump2{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,athump .62s ease-in-out 1.31s infinite}
+.art.go .ly.skin{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,askin .62s ease-in-out 1s infinite}
 .art .wv{fill:none;stroke:#8A1226;stroke-width:5;stroke-linecap:round;opacity:0;transform-box:view-box}
 .art.go .wv{animation:awv 1.24s ease-out calc(1s + var(--i) * .16s) infinite}
 .art .note{opacity:0;transform-box:fill-box;transform-origin:center}
 .art.go .note{animation:anote 1.86s ease-out calc(1s + var(--i) * .55s) infinite}
-.art.go .ly.hd{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,ahdip 3.4s ease-in-out 1s infinite}
+.art.go .ly.hd{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,ahdip 3.4s ease-in-out 1s infinite}
 .art .dab{opacity:0}
 .art.go .dab{animation:ahdip 3.4s ease-in-out 1s infinite,adab 3.4s linear 1s infinite}
-.art.go .ly.sq{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,asq 3.4s ease-in-out 1s infinite}
+.art.go .ly.sq{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,asq 3.4s ease-in-out 1s infinite}
 /* haldi: a hand takes some, and the pot is left a little used */
-.art.go .ly.pfull{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .3) forwards,afull2 2.3s linear .8s 1 forwards}
+.art.go .ly.pfull{animation:apop .5s cubic-bezier(.3,1.5,.5,1) calc(var(--d) * .55) forwards,afull2 2.3s linear .8s 1 forwards}
 .art.go .ly.pused{animation:aused2 2.3s linear .8s 1 both}
 .art .hd2,.art .dab2{opacity:0}
 .art.go .hd2{animation:ahand2 2.3s ease-in-out .8s 1 both}
@@ -638,7 +638,7 @@ footer{touch-action:manipulation}
       (function step(now){ var t=clamp((now-st)/650), e=1-Math.pow(1-t,3); window.celH=from+(to-from)*e; if(window.celDraw) window.celDraw(); if(t<1) raf=requestAnimationFrame(step); })(st); }
     function upd(){ var r=sec.getBoundingClientRect(), vh=window.innerHeight, i=Math.max(0,Math.min(evs.length-1,Math.round(-r.top/vh))), v=r.top<vh*.7&&r.bottom>vh*.3, near=r.top<vh*2&&r.bottom>-vh;
       if(i===act&&v===vis&&near===nr) return; act=i; vis=v; nr=near;
-      evs.forEach(function(e,k){ e.classList.toggle('on',k===i); e.classList.toggle('was',k<i); var a=e.querySelector('.art'); if(a){ a.classList.toggle('go',near&&Math.abs(k-i)<=1); if(k===i&&v) a.querySelectorAll('.pfull,.pused,.hd2,.dab2').forEach(function(x){ x.style.animation='none'; void x.offsetWidth; x.style.animation=''; }); } });
+      evs.forEach(function(e,k){ e.classList.toggle('on',k===i); e.classList.toggle('was',k<i); var a=e.querySelector('.art'); if(a){ if(v&&k===i){ if(!a.classList.contains('go')){ void a.offsetWidth; a.classList.add('go'); } } else a.classList.remove('go'); } });
       size(); }
     window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',function(){ upd(); size(true); });
     window.addEventListener('load',function(){ upd(); size(); }); [300,1500,7500].forEach(function(ms){ setTimeout(function(){ upd(); size(); },ms); });
@@ -828,7 +828,7 @@ footer{touch-action:manipulation}
   })();
   var arts=document.querySelectorAll(".art[data-art]");
   if(!("IntersectionObserver" in window)){ arts.forEach(function(a){ a.classList.add("go"); }); return; }
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.target.closest("#frame")) return; if(e.isIntersecting) e.target.classList.add("go"); else e.target.classList.remove("go"); }); },{threshold:0,rootMargin:"110% 0px 110% 0px"});
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.target.closest("#frame")) return; if(e.isIntersecting&&e.intersectionRatio>=.08) e.target.classList.add("go"); else if(!e.isIntersecting) e.target.classList.remove("go"); }); },{threshold:[0,.08]});
   arts.forEach(function(a){ io.observe(a); });
 })();
 </script>
