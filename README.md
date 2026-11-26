@@ -8,5 +8,5 @@ share or copy the invitation.
 
 Thank you for respecting our privacy.
 
-Fiza & Arshad
+Fiza & Arshad,
 27 December 2026
