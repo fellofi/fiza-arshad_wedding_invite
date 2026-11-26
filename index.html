@@ -511,7 +511,13 @@ footer{touch-action:manipulation}
   var stage=document.getElementById("stage"), hero=document.getElementById("hero");
 
   /* ---------- curtain that parts and ties back ---------- */
-  var FOLDS=17, sides=[document.getElementById("cl"),document.getElementById("cr")], parts=[];
+  /* curtain size follows the screen: slim on phones, fuller drapes with more folds on wide screens */
+  var OPEN=[21.4,6,16.4];
+  function curtainCaps(){ var W=window.innerWidth||390, H=window.innerHeight||800, r=Math.max(0,Math.min(1,(W/H-.62)/.9));
+    var top=Math.max(21.4,Math.min(38,50-33000/W)), tie=top*(.28+.3*r), bot=top*(.77+.08*r);
+    OPEN=[top,tie,bot]; return OPEN; }
+  curtainCaps();
+  var FOLDS=Math.max(17,Math.min(42,Math.round((window.innerWidth||390)/2/13))), sides=[document.getElementById("cl"),document.getElementById("cr")], parts=[];
   sides.forEach(function(g){
     var body=document.createElementNS(NS,"path"); body.setAttribute("class","body"); g.appendChild(body);
     var folds=[];
@@ -544,7 +550,7 @@ footer{touch-action:manipulation}
   }
   function render(p,phase){
     var pb=ease(clamp(p/.72)), pt=ease(clamp((p-.22)/.78));
-    var top=50.4-29*pt, tie=50.4-44.4*pb, bot=50.4-34*pb;
+    var top=50.4-(50.4-OPEN[0])*pt, tie=50.4-(50.4-OPEN[1])*pb, bot=50.4-(50.4-OPEN[2])*pb;
     if(p>=1 && cur){ top=cur[0]; tie=cur[1]; bot=cur[2]; curtainEl.style.opacity=clamp(top/1.5); }
     drawV(top,tie,bot,p,phase);
     hero.style.opacity=clamp((p-.3)/.5);
@@ -552,7 +558,7 @@ footer{touch-action:manipulation}
   var phase=0, idle=true, p=0, slim=0, opened=false;
   /* curtains follow the content: each screen gets the thickest drape that still clears what is on it */
   var finBusy=false;
-  var OPEN=[21.4,6,16.4], MINC=[5,1.8,4.2], GAP=3.2, cur=null, frames=[];
+  var MINC=[5,1.8,4.2], GAP=3.2, cur=null, frames=[];
   function bez(a,b,c,d,t){ var u=1-t; return u*u*u*a+3*u*u*t*b+3*u*t*t*c+t*t*t*d; }
   function curvePts(v){ var top=v[0],tie=v[1],bot=v[2],pts=[],i,t;
     var A=[[top,0],[top,22],[tie+(top-tie)*.4,42],[tie,60]], B=[[tie,60],[tie-(top-tie)*.24,70.8],[bot-(bot-tie)*.1,88],[bot,100]];
@@ -583,7 +589,7 @@ footer{touch-action:manipulation}
     document.querySelectorAll('#content section,footer').forEach(function(e){ ys.push(e.getBoundingClientRect().top+sy); });
     [1,2,3,4].forEach(function(k){ var c=document.querySelector('section.cel'); if(c) ys.push(c.getBoundingClientRect().top+sy+k*vh); });
     ys.sort(function(a,b){return a-b;});
-    var fr=[{y:0,v:OPEN.slice()}];
+    curtainCaps(); var fr=[{y:0,v:OPEN.slice()}];
     ys.forEach(function(y){ if(y-fr[fr.length-1].y<vh*.25) return;
       var rects=[]; ink.forEach(function(r){ if(r.b>y && r.t<y+vh) rects.push({l:r.l,y1:(r.t-y)/vh*100,y2:(r.b-y)/vh*100}); });
       fr.push({y:y,v:fitCurtain(rects)}); });
